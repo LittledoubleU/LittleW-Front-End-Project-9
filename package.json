@@ -1,0 +1,12 @@
+{
+  "name": "exercise-9",
+  "version": "1.0.0",
+  "description": "I made it for ufn",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "w",
+  "license": "ISC"
+}
