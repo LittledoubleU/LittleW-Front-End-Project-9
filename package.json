@@ -8,5 +8,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "w",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "url": "https://github.com/LittledoubleU/LittleW-Front-End-Project-9.git"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "file-uri-to-path": "^2.0.0"
+  }
 }
