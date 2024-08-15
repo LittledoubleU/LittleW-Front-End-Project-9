@@ -2,3 +2,8 @@
     font-family: OpenGenshinFont;
     src: url(/assets/font/Genshin\ Impact\ DRIP\ FONT.otf);
   }
+
+  @font-face {
+    font-family: TrueGenshinFont;
+    src: url(/assets/font/Genshin\ Impact\ true\ DRIP\ FONT.ttf);
+  }

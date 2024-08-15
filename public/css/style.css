@@ -5,6 +5,11 @@
 
     --seciton-gap: 1.5px;
     --text-color: white;
+
+    --furina-bg: #2d4286;
+    --navia-bg: #ffb22d;
+    --raiden-bg: #6333ae;
+    --arlecchino-bg: #891100;
 }
 
 section {
@@ -16,6 +21,7 @@ section {
     flex-basis: 25%;
     background-color: var(--bg-black);
     overflow: hidden;
+    position: relative;
 }
 
 .center {
@@ -30,9 +36,14 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
+
+    img {
+        position: absolute;
+    }
 }
 
 .text-bg {
+    width: 100%;
     height: 100%;
     p {
         color: var(--text-color);
@@ -43,9 +54,109 @@ section {
     }
 }
 
-.character_layer {
-    display: flex;
-    flex-direction: column;
-    position: relative;
+.character-layer {
     z-index: 2;
+    opacity: 1;
+
+    .character {
+        --width: 100%;
+        --bottom: 0;
+        --translateX: 0;
+        min-width: var(--width);
+        left: var(--translateX);
+        bottom: var(--bottom);
+    }
+
+    .bg#furina .character {
+        --width: 125%;
+        --translateX: -10%;
+    }
+
+    .bg#navia .character {
+        --width: 150%;
+        --bottom: -45%;
+        --translateX: -5%;
+    }
+
+    .bg#raiden .character {
+        --width: 125%;
+        --bottom: -10%;
+        --translateX: -10%;
+    }
+
+    .bg#arlecchino .character {
+        --bottom: -20%;
+        --translateX: 0%;
+    }
+
+    .bg {
+        --bg-color: transparent;
+        background-color: var(--bg-color);
+    }
+
+    .bg#furina {
+        --bg-color: var(--furina-bg);
+    }
+
+    .bg#navia {
+        --bg-color: var(--navia-bg);
+    }
+
+    .bg#raiden {
+        --bg-color: var(--raiden-bg);
+    }
+
+    .bg#arlecchino {
+        --bg-color: var(--arlecchino-bg);
+    }
+
+    .text {
+        color: white;
+        padding: 1em 1em 0.5em 1em;
+        box-sizing: border-box;
+    }
+
+    .text .h1 {
+        font-family: TrueGenshinFont;
+        font-size: clamp(0.0625rem, 0.0625rem + 1.4375vw, 1.5rem);
+        margin-bottom: 0.5em;
+    }
+
+    .text p {
+        font-size: clamp(0.0625rem, 0.0625rem + 0.9375vw, 1rem);
+        font-weight: lighter;
+    }
+}
+
+.container {
+    .character-layer {
+        opacity: 0;
+        transition: 0.75s all;
+    }
+
+    .character-layer .bg:nth-child(1) {
+        transform: scale(200%);
+    }
+
+    .character-layer .bg:nth-child(2) {
+        transform: translateX(-100%);
+    }
+
+    .character-layer .bg {
+        transition: 0.5s all;
+    }
+}
+
+.container:hover {
+    .character-layer {
+        opacity: 1;
+    }
+
+    .character-layer .bg:nth-child(1) {
+        transform: scale(100%);
+    }
+
+    .character-layer .bg:nth-child(2) {
+        transform: translateX(0%);
+    }
 }
